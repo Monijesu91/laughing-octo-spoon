@@ -1,10 +1,10 @@
-const dayInput = document.getElementById("day");
-const monthInput = document.getElementById("month");
-const yearInput = document.getElementById("year");
+const dayInp = document.getElementById("day");
+const monthInp = document.getElementById("month");
+const yearInp = document.getElementById("year");
 
-const dayOutput = document.getElementById("DD");
-const monthOutput = document.getElementById("MM");
-const yearOutput = document.getElementById("YY");
+const dayOut = document.getElementById("DD");
+const monthOut = document.getElementById("MM");
+const yearOut = document.getElementById("YY");
 
 const form = document.querySelector("form");
 
@@ -26,11 +26,11 @@ function validate() {
       i.style.borderColor = "red";
       parent.querySelector("small").innerText = "This field is required.";
       validator = false;
-    } else if (i === monthInput && i.value > 12) {
+    } else if (i === monthInp && i.value > 12) {
       i.style.borderColor = "red";
       parent.querySelector("small").innerText = "Must be a valid month.";
       validator = false;
-    } else if (i === dayInput && i.value > 31) {
+    } else if (i === dayInp && i.value > 31) {
       i.style.borderColor = "red";
       parent.querySelector("small").innerText = "Must be a valid day.";
       validator = false;
@@ -46,18 +46,18 @@ function validate() {
 function handleSubmit(e) {
   e.preventDefault();
   if (validate()) {
-    if (dayInput.value > day) {
+    if (dayInp.value > day) {
       day = day + months[month - 1];
       month = month - 1;
     }
-    if (monthInput.value > month) {
+    if (monthInp.value > month) {
       month = month + 12;
       year = year - 1;
     }
 
-    const d = day - dayInput.value;
-    const m = month - monthInput.value;
-    const y = year - yearInput.value;
+    const d = day - dayInp.value;
+    const m = month - monthInp.value;
+    const y = year - yearInp.value;
 
     dayOut.innerHTML = d;
     monthOut.innerHTML = m;

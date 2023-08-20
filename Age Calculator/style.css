@@ -70,16 +70,16 @@ input::placeholder {
     font-weight: 800;
 }
 
-.submit_block {
+.submit_space {
     display: flex;
     align-items: center;
 }
 
-.submit_block hr{
+.submit_space hr{
     width: 100%;
 }
 
-.submit_block .submit_btn {
+.submit_space .submit_btn {
     border-radius: 50%;
     padding: 1rem;
     background-color: var(--purple);
@@ -104,6 +104,11 @@ input::placeholder {
 small {
     color: red;
 }
+
+@media screen and (max-width: 600px) {
+    .card {
+        width: 360px;
+    }
     .container {
         padding: 1rem;
     }
@@ -112,7 +117,7 @@ small {
         gap: 0;
         justify-content: space-between;
     }
-    .submit_block {
+    .submit_space {
         position: relative;
     }
     .submit_btn {
@@ -128,3 +133,4 @@ small {
         font-size: 3.5rem;
     }
 
+}
