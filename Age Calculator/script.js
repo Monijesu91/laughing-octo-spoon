@@ -62,5 +62,20 @@ function handleSubmit(e) {
     dayOut.innerHTML = d;
     monthOut.innerHTML = m;
     yearOut.innerHTML = y;
+    saveToLocal(y, m, d); 
   }
 }
+
+ function saveToLocal(y, m, d) {
+  if (window.localStorage){
+    localStorage.setItem("lastAgeCalc", JSON.stringify({y, m, d}));
+  }
+ }
+ 
+ window.document.onreadystatechange=function(){
+  const userAge = JSON.parse(localStorage.getItem("lastAgeCalc"));
+
+  dayOut.innerHTML = userAge.d;
+  monthOut.innerHTML = userAge.m;
+  yearOut.innerHTML = userAge.y;
+ }
